@@ -1,0 +1,31 @@
+rest:
+  resource: https://ems.stromsparverein.at/getEegRtData
+  scan_interval: 60
+
+  sensor:
+   
+    - name: ems_Timestamp
+      icon: mdi:clock-time-eight-outline
+      value_template: '{{ value_json.Timestamp  }}'
+
+    - name: ems_ApiVersion
+      icon: mdi:numeric
+      value_template: '{{ value_json.ApiVersion  }}'
+
+    - name: ems_EegCon
+      icon: mdi:transmission-tower-export
+      value_template: '{{ value_json.EgPCon  }}'
+      unit_of_measurement: "W"
+      device_class: "power"
+
+    - name: ems_EegGen
+      icon: mdi:transmission-tower-import
+      value_template: '{{ value_json.EgPGen  }}'
+      unit_of_measurement: "W"
+      device_class: "power"
+
+    - name: ems_EegPwr
+      icon: mdi:transmission-tower
+      value_template: '{{ value_json.EgPwr  }}'
+      unit_of_measurement: "W"
+      device_class: "power"
