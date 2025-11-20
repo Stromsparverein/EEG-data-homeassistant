@@ -1,0 +1,23 @@
+type: grid
+cards:
+  - type: heading
+    heading: EEG-Data-48h
+    heading_style: title
+  - type: gauge
+    entity: sensor.ems_eegpwr
+    min: -25000
+    max: 25000
+    unit: W
+    needle: true
+    severity:
+      green: 1
+      yellow: 0
+      red: -25000
+    name: Eeg-Pwr
+  - type: history-graph
+    entities:
+      - entity: sensor.ems_eeggen
+      - entity: sensor.ems_eegpwr
+      - entity: sensor.ems_eegcon
+    title: EEG-Power
+    hours_to_show: 48
